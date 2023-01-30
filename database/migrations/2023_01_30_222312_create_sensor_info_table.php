@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('sensor_info', function (Blueprint $table) {
             $table->id();
-            $table->string('id_string');
+            $table->string('id_string')->unique();
             $table->string('raum');
             $table->text('beschreibung');
         });
