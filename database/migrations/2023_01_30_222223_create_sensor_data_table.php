@@ -19,6 +19,7 @@ return new class extends Migration
             $table->float('temp', 5, 1);
             $table->integer('hum');
             $table->integer('rssi');
+            $table->dateTime('time');
             $table->timestamps();
         });
     }
