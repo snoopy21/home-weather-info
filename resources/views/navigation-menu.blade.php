@@ -6,25 +6,25 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <x-jet-application-mark class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
+                        <x-application-mark class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
+                    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="http://localhost:8080/" target="_blank">
+                    <x-nav-link href="http://localhost:8080/" target="_blank">
                         {{ __('Adminer') }}
-                    </x-jet-nav-link>
+                    </x-nav-link>
                 </div>
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
-                <x-jet-dropdown align="right" width="48">
+                <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 hover:text-gray-700 dark:hover:text-gray-300 focus:outline-none transition ease-in-out duration-150">
                             <div>{{ Auth::user()->name }}</div>
@@ -43,13 +43,13 @@
                             {{ __('Manage Account') }}
                         </div>
 
-                        <x-jet-dropdown-link href="{{ route('profile.show') }}">
+                        <x-dropdown-link href="{{ route('profile.show') }}">
                             {{ __('Profile') }}
-                        </x-jet-dropdown-link>
+                        </x-dropdown-link>
 
-                        <x-jet-dropdown-link href="{{ route('api-tokens.index') }}">
+                        <x-dropdown-link href="{{ route('api-tokens.index') }}">
                             {{ __('API Tokens') }}
-                        </x-jet-dropdown-link>
+                        </x-dropdown-link>
 
                         <div class="border-t border-gray-100"></div>
 
@@ -57,14 +57,14 @@
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
 
-                            <x-jet-dropdown-link :href="route('logout')"
+                            <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
                                                 this.closest('form').submit();">
                                 {{ __('Log Out') }}
-                            </x-jet-dropdown-link>
+                            </x-dropdown-link>
                         </form>
                     </x-slot>
-                </x-jet-dropdown>
+                </x-dropdown>
             </div>
 
             <!-- Hamburger -->
@@ -82,14 +82,14 @@
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+            <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
         </div>
         <div class="pt-2 pb-3 space-y-1">
-            <x-jet-responsive-nav-link href="http://localhost:8080/" target="_blank">
+            <x-responsive-nav-link href="http://localhost:8080/" target="_blank">
                  {{ __('Adminer') }}
-            </x-jet-responsive-nav-link>
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -101,23 +101,23 @@
 
             <div class="mt-3 space-y-1">
                 <!-- Account Management -->
-                <x-jet-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
                     {{ __('Profile') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
 
-                <x-jet-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
+                <x-responsive-nav-link href="{{ route('api-tokens.index') }}" :active="request()->routeIs('api-tokens.index')">
                     {{ __('API Tokens') }}
-                </x-jet-responsive-nav-link>
+                </x-responsive-nav-link>
 
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
 
-                    <x-jet-responsive-nav-link :href="route('logout')"
+                    <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
                         {{ __('Log Out') }}
-                    </x-jet-responsive-nav-link>
+                    </x-responsive-nav-link>
                 </form>
             </div>
         </div>
