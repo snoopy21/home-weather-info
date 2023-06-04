@@ -1,17 +1,14 @@
-<div class="p-6 sm:px-20 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
+<div class="p-6 sm:px-20 bg-blue-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
     <div>
-        <x-application-logo class="block h-12 w-auto" />
+        <x-application-logo class="block h-12 w-auto fill-current text-blue-900 dark:text-blue-400" />
     </div>
 
-    <div class="mt-8 text-2xl dark:text-white">
-        Welcome to your Jetstream application!
+    <div class="mt-8 text-2xl dark:text-blue-50">
+        Home-Weather-Info - Gruobhof 7, Igis
     </div>
 
     <div class="mt-6 text-gray-500 dark:text-gray-400">
-        Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-        to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-        you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-        ecosystem to be a breath of fresh air. We hope you love it.
+        Die aktuellen Sensordaten der Attika-Wohnung.
     </div>
 </div>
 
@@ -28,10 +25,10 @@
             </div>
 
             <a href="https://laravel.com/docs">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700">
+                <div class="mt-3 flex items-center text-sm font-semibold text-blue-700">
                     <div>Explore the documentation</div>
 
-                    <div class="ml-1 text-indigo-500">
+                    <div class="ml-1 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
@@ -53,10 +50,10 @@
             </div>
 
             <a href="https://laracasts.com">
-                <div class="mt-3 flex items-center text-sm font-semibold text-indigo-700 dark:text-indigo-300">
+                <div class="mt-3 flex items-center text-sm font-semibold text-blue-700 dark:text-blue-300">
                     <div>Start watching Laracasts</div>
 
-                    <div class="ml-1 text-indigo-500">
+                    <div class="ml-1 text-blue-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
