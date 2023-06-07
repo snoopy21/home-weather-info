@@ -4,9 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\SensorData;
 use App\Models\SensorInfo;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Illuminate\Http\Request;
 
 class SensorDataController extends Controller
 {
@@ -17,7 +16,9 @@ class SensorDataController extends Controller
      */
     public function index()
     {
-        //
+        $data['sensors'] = SensorInfo::all();
+        $data['last_update'] = SensorData::orderBy('time', 'desc')->first();
+        return view('dashboard', $data);
     }
 
     /**
@@ -33,7 +34,6 @@ class SensorDataController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -45,7 +45,7 @@ class SensorDataController extends Controller
             if ($key === 0) {
                 $ids = $sensor->id_string;
             } else {
-                $ids = $ids . ',' . $sensor->id_string;
+                $ids = $ids.','.$sensor->id_string;
             }
         }
         // Werte prüfen
@@ -53,7 +53,7 @@ class SensorDataController extends Controller
             'item' => 'in:'.$ids,
             'temp' => 'required|numeric|min:-40|max:50',
             'humidity' => 'required|integer|min:0|max:100',
-            'time' => 'required'
+            'time' => 'required',
         ]);
         // Werte abspeichern
         try {
@@ -72,7 +72,6 @@ class SensorDataController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\SensorData  $sensorData
      * @return \Illuminate\Http\Response
      */
     public function show(SensorData $sensorData)
@@ -83,7 +82,6 @@ class SensorDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\SensorData  $sensorData
      * @return \Illuminate\Http\Response
      */
     public function edit(SensorData $sensorData)
@@ -94,8 +92,6 @@ class SensorDataController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\SensorData  $sensorData
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, SensorData $sensorData)
@@ -106,7 +102,6 @@ class SensorDataController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\SensorData  $sensorData
      * @return \Illuminate\Http\Response
      */
     public function destroy(SensorData $sensorData)
