@@ -6,7 +6,6 @@ use App\Models\SensorData;
 use App\Models\SensorInfo;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class SensorDataController extends Controller
 {
@@ -18,6 +17,7 @@ class SensorDataController extends Controller
     public function index()
     {
         $data['sensors'] = SensorInfo::all();
+        $data['last_update'] = SensorData::orderBy('time', 'desc')->first();
         return view('dashboard', $data);
     }
 

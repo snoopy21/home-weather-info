@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="mt-6 text-gray-500 dark:text-gray-400">
-                        Die aktuellen Sensordaten der Attika-Wohnung.
+                        Die aktuellen Sensordaten <span class="text-sm">({{ date("d.m.Y H:m:s", strtotime($last_update->time)) }})</span> der Attika-Wohnung.
                     </div>
                 </div>
 
@@ -29,7 +29,7 @@
                                 {!! $sensor->svg !!}
                                 <div class="ml-4 text-lg text-gray-600 dark:text-gray-100 leading-7 font-semibold">{{ $sensor->raum }}</div>
                             </div>
-                            <livewire:sensor-data-view />
+                            @livewire('sensor-data-view', ['sensor_id' => $sensor->id_string])
                         </div>
                     @endforeach
                 </div>
