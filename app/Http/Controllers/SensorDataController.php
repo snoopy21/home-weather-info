@@ -17,7 +17,8 @@ class SensorDataController extends Controller
      */
     public function index()
     {
-        //
+        $data['sensors'] = SensorInfo::all();
+        return view('dashboard', $data);
     }
 
     /**
