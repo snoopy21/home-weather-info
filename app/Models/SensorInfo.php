@@ -14,6 +14,6 @@ class SensorInfo extends Model
     protected $fillable = [
         'id_string',
         'raum',
-        'beschreibung'
+        'beschreibung',
     ];
 }
