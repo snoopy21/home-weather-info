@@ -18,6 +18,7 @@ class SensorDataController extends Controller
     {
         $data['sensors'] = SensorInfo::all();
         $data['last_update'] = SensorData::orderBy('time', 'desc')->first();
+
         return view('dashboard', $data);
     }
 

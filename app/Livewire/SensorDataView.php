@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Livewire;
-use App\Models\SensorData;
+namespace App\Livewire;
 
+use App\Models\SensorData;
 use Livewire\Component;
 
 class SensorDataView extends Component
