@@ -18,7 +18,7 @@
                     </div>
 
                     <div class="mt-6 text-gray-500 dark:text-gray-400">
-                        Die aktuellen Sensordaten <span class="text-sm">({{ date("d.m.Y H:m:s", strtotime($last_update->time)) }})</span> der Attika-Wohnung.
+                        Die aktuellen Sensordaten <span class="text-sm">({{ date("d.m.Y H:i:s", strtotime($last_update->time)) }})</span> der Attika-Wohnung.
                     </div>
                 </div>
 
